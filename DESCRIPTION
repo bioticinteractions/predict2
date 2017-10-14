@@ -1,0 +1,11 @@
+Package: predict2
+Version: 0.1
+Title: Take model objects to make predictions, save model objects and predictions to disk
+Description: A function to make predictions for multiple models on a given test dataset (also works with just one model object). Then the function can write out the predictions and model objects out to disk (.data and .csv files). The function also allows to customize the csv and data filenames.
+Authors@R: person("Daniel", "Song", email = "danssong@gmail.com", role = c("aut", "cre"))
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 2.10)
+ByteCompile: true
+RoxygenNote: 6.0.1

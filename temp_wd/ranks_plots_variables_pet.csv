@@ -1,0 +1,53 @@
+variable,min,max,zero_value,missing,transformation,keep,notes,r_var,sas_var,lazy,sas
+monthly_sales,15,15535,0,676,0,y,,monthly_sales_trfm,tmonthly_sales,"DDD$monthly_sales_trfm = with(DDD, trfm(monthly_sales, missing = 676, min = 15, max = 15535, zero_value = 0, transformation = 0))","%trfm(monthly_sales, 676,15, 15535, 0, 0)"
+l15day_sales,0,8279,0,345,0,y,,l15day_sales_trfm,tl15day_sales,"DDD$l15day_sales_trfm = with(DDD, trfm(l15day_sales, missing = 345, min = 0, max = 8279, zero_value = 0, transformation = 0))","%trfm(l15day_sales, 345,0, 8279, 0, 0)"
+l7day_sales,19,4025,0,161,2,y,,l7day_sales_trfm,tl7day_sales,"DDD$l7day_sales_trfm = with(DDD, trfm(l7day_sales, missing = 161, min = 19, max = 4025, zero_value = 0, transformation = 2))","%trfm(l7day_sales, 161,19, 4025, 0, 2)"
+monthly_sales_bb,0,189,0,6,2,y,,monthly_sales_bb_trfm,tmonthly_sales_bb,"DDD$monthly_sales_bb_trfm = with(DDD, trfm(monthly_sales_bb, missing = 6, min = 0, max = 189, zero_value = 0, transformation = 2))","%trfm(monthly_sales_bb, 6,0, 189, 0, 2)"
+l15day_sales_bb,0,103,0,3,2,y,,l15day_sales_bb_trfm,tl15day_sales_bb,"DDD$l15day_sales_bb_trfm = with(DDD, trfm(l15day_sales_bb, missing = 3, min = 0, max = 103, zero_value = 0, transformation = 2))","%trfm(l15day_sales_bb, 3,0, 103, 0, 2)"
+l7day_sales_bb,no good,,,,,,,,,,
+monthly_orders_bb,0,11,0,0,0,y,,monthly_orders_bb_trfm,tmonthly_orders_bb,"DDD$monthly_orders_bb_trfm = with(DDD, trfm(monthly_orders_bb, missing = 0, min = 0, max = 11, zero_value = 0, transformation = 0))","%trfm(monthly_orders_bb, 0,0, 11, 0, 0)"
+l15day_orders_bb,0,4,0,0,2,y,used maximum decile,l15day_orders_bb_trfm,tl15day_orders_bb,"DDD$l15day_orders_bb_trfm = with(DDD, trfm(l15day_orders_bb, missing = 0, min = 0, max = 4, zero_value = 0, transformation = 2))","%trfm(l15day_orders_bb, 0,0, 4, 0, 2)"
+l7day_orders_bb,0,4,0,0,0,y,used maximum decile,l7day_orders_bb_trfm,tl7day_orders_bb,"DDD$l7day_orders_bb_trfm = with(DDD, trfm(l7day_orders_bb, missing = 0, min = 0, max = 4, zero_value = 0, transformation = 0))","%trfm(l7day_orders_bb, 0,0, 4, 0, 0)"
+monthly_orders,1,915,0,37,0,y,,monthly_orders_trfm,tmonthly_orders,"DDD$monthly_orders_trfm = with(DDD, trfm(monthly_orders, missing = 37, min = 1, max = 915, zero_value = 0, transformation = 0))","%trfm(monthly_orders, 37,1, 915, 0, 0)"
+l15day_orders,0,489,0,19,0,y,,l15day_orders_trfm,tl15day_orders,"DDD$l15day_orders_trfm = with(DDD, trfm(l15day_orders, missing = 19, min = 0, max = 489, zero_value = 0, transformation = 0))","%trfm(l15day_orders, 19,0, 489, 0, 0)"
+l7day_orders,0,273,0,9,0,y,,l7day_orders_trfm,tl7day_orders,"DDD$l7day_orders_trfm = with(DDD, trfm(l7day_orders, missing = 9, min = 0, max = 273, zero_value = 0, transformation = 0))","%trfm(l7day_orders, 9,0, 273, 0, 0)"
+monthly_units_ordered,1,977,0,41,0,y,,monthly_units_ordered_trfm,tmonthly_units_ordered,"DDD$monthly_units_ordered_trfm = with(DDD, trfm(monthly_units_ordered, missing = 41, min = 1, max = 977, zero_value = 0, transformation = 0))","%trfm(monthly_units_ordered, 41,1, 977, 0, 0)"
+l15day_units_ordered,0,540,0,21,0,y,,l15day_units_ordered_trfm,tl15day_units_ordered,"DDD$l15day_units_ordered_trfm = with(DDD, trfm(l15day_units_ordered, missing = 21, min = 0, max = 540, zero_value = 0, transformation = 0))","%trfm(l15day_units_ordered, 21,0, 540, 0, 0)"
+l7day_units_ordered,0,269,0,10,0,y,,l7day_units_ordered_trfm,tl7day_units_ordered,"DDD$l7day_units_ordered_trfm = with(DDD, trfm(l7day_units_ordered, missing = 10, min = 0, max = 269, zero_value = 0, transformation = 0))","%trfm(l7day_units_ordered, 10,0, 269, 0, 0)"
+monthly_units_ordered_bb,0,16,0,0,0,y,,monthly_units_ordered_bb_trfm,tmonthly_units_ordered_bb,"DDD$monthly_units_ordered_bb_trfm = with(DDD, trfm(monthly_units_ordered_bb, missing = 0, min = 0, max = 16, zero_value = 0, transformation = 0))","%trfm(monthly_units_ordered_bb, 0,0, 16, 0, 0)"
+l15day_units_ordered_bb,0,6,0,0,1,y,,l15day_units_ordered_bb_trfm,tl15day_units_ordered_bb,"DDD$l15day_units_ordered_bb_trfm = with(DDD, trfm(l15day_units_ordered_bb, missing = 0, min = 0, max = 6, zero_value = 0, transformation = 1))","%trfm(l15day_units_ordered_bb, 0,0, 6, 0, 1)"
+l7day_units_ordered_bb,no good,,,0,,,,,,,
+mon_unit_session_per_bb,0,165,0,3,1,y,Used maximum; not likely,mon_unit_session_per_bb_trfm,tmon_unit_session_per_bb,"DDD$mon_unit_session_per_bb_trfm = with(DDD, trfm(mon_unit_session_per_bb, missing = 3, min = 0, max = 165, zero_value = 0, transformation = 1))","%trfm(mon_unit_session_per_bb, 3,0, 165, 0, 1)"
+l15day_unit_session_per_bb,0,90,0,2,1,y,Used maximum; not likely,l15day_unit_session_per_bb_trfm,tl15day_unit_session_per_bb,"DDD$l15day_unit_session_per_bb_trfm = with(DDD, trfm(l15day_unit_session_per_bb, missing = 2, min = 0, max = 90, zero_value = 0, transformation = 1))","%trfm(l15day_unit_session_per_bb, 2,0, 90, 0, 1)"
+l7day_unit_session_per_bb,no good,,1,,,,,,,,
+mon_sessions,2,5301,0,258,0,y,,mon_sessions_trfm,tmon_sessions,"DDD$mon_sessions_trfm = with(DDD, trfm(mon_sessions, missing = 258, min = 2, max = 5301, zero_value = 0, transformation = 0))","%trfm(mon_sessions, 258,2, 5301, 0, 0)"
+l15day_sessions,0,2699,0,128,0,y,,l15day_sessions_trfm,tl15day_sessions,"DDD$l15day_sessions_trfm = with(DDD, trfm(l15day_sessions, missing = 128, min = 0, max = 2699, zero_value = 0, transformation = 0))","%trfm(l15day_sessions, 128,0, 2699, 0, 0)"
+l7day_sessions,0,1397,0,62,0,y,,l7day_sessions_trfm,tl7day_sessions,"DDD$l7day_sessions_trfm = with(DDD, trfm(l7day_sessions, missing = 62, min = 0, max = 1397, zero_value = 0, transformation = 0))","%trfm(l7day_sessions, 62,0, 1397, 0, 0)"
+mon_page_views,3,6782,0,336,0,y,,mon_page_views_trfm,tmon_page_views,"DDD$mon_page_views_trfm = with(DDD, trfm(mon_page_views, missing = 336, min = 3, max = 6782, zero_value = 0, transformation = 0))","%trfm(mon_page_views, 336,3, 6782, 0, 0)"
+l15day_page_views,0,3469,0,167,0,y,,l15day_page_views_trfm,tl15day_page_views,"DDD$l15day_page_views_trfm = with(DDD, trfm(l15day_page_views, missing = 167, min = 0, max = 3469, zero_value = 0, transformation = 0))","%trfm(l15day_page_views, 167,0, 3469, 0, 0)"
+l7day_page_views,0,1792,0,80,0,y,,l7day_page_views_trfm,tl7day_page_views,"DDD$l7day_page_views_trfm = with(DDD, trfm(l7day_page_views, missing = 80, min = 0, max = 1792, zero_value = 0, transformation = 0))","%trfm(l7day_page_views, 80,0, 1792, 0, 0)"
+rec_bb_per,0,93,0,60,2,y,no good,rec_bb_per_trfm,trec_bb_per,"DDD$rec_bb_per_trfm = with(DDD, trfm(rec_bb_per, missing = 60, min = 0, max = 93, zero_value = 0, transformation = 2))","%trfm(rec_bb_per, 60,0, 93, 0, 2)"
+monthly_bb_per,3.5,97,0,63,1,y,no good,monthly_bb_per_trfm,tmonthly_bb_per,"DDD$monthly_bb_per_trfm = with(DDD, trfm(monthly_bb_per, missing = 63, min = 3.5, max = 97, zero_value = 0, transformation = 1))","%trfm(monthly_bb_per, 63,3.5, 97, 0, 1)"
+l15day_bb_per,no good,,,,,,,,,,
+l7day_bb_per,0,22,0,17,2,y,no good,l7day_bb_per_trfm,tl7day_bb_per,"DDD$l7day_bb_per_trfm = with(DDD, trfm(l7day_bb_per, missing = 17, min = 0, max = 22, zero_value = 0, transformation = 2))","%trfm(l7day_bb_per, 17,0, 22, 0, 2)"
+monthly_pv_per,0.0014,0.1098600754,0,0,0,y,,monthly_pv_per_trfm,tmonthly_pv_per,"DDD$monthly_pv_per_trfm = with(DDD, trfm(monthly_pv_per, missing = 0, min = 0.0014, max = 0.1098600754, zero_value = 0, transformation = 0))","%trfm(monthly_pv_per, 0,0.0014, 0.1098600754, 0, 0)"
+l15day_pv_per,0,0.0748,0,0,0,y,,l15day_pv_per_trfm,tl15day_pv_per,"DDD$l15day_pv_per_trfm = with(DDD, trfm(l15day_pv_per, missing = 0, min = 0, max = 0.0748, zero_value = 0, transformation = 0))","%trfm(l15day_pv_per, 0,0, 0.0748, 0, 0)"
+l7day_pv_per,0,0.049,0,0,2,y,,l7day_pv_per_trfm,tl7day_pv_per,"DDD$l7day_pv_per_trfm = with(DDD, trfm(l7day_pv_per, missing = 0, min = 0, max = 0.049, zero_value = 0, transformation = 2))","%trfm(l7day_pv_per, 0,0, 0.049, 0, 2)"
+rec_rank,485,283948,0,46886,1,y,,rec_rank_trfm,trec_rank,"DDD$rec_rank_trfm = with(DDD, trfm(rec_rank, missing = 46886, min = 485, max = 283948, zero_value = 0, transformation = 1))","%trfm(rec_rank, 46886,485, 283948, 0, 1)"
+rec_merc_listings,no good,,,,,,,,,,
+rec_fba_listing,no good,,,,,,,,,,
+old_rank,567,138522,0,49710,1,y,,old_rank_trfm,told_rank,"DDD$old_rank_trfm = with(DDD, trfm(old_rank, missing = 49710, min = 567, max = 138522, zero_value = 0, transformation = 1))","%trfm(old_rank, 49710,567, 138522, 0, 1)"
+old_merc_listings,no good,,,,,,,,,,
+old_fba_listing,no good,,,,,,,,,,
+avg_rank_l15,240,58733,0,22348,1,y,,avg_rank_l15_trfm,tavg_rank_l15,"DDD$avg_rank_l15_trfm = with(DDD, trfm(avg_rank_l15, missing = 22348, min = 240, max = 58733, zero_value = 0, transformation = 1))","%trfm(avg_rank_l15, 22348,240, 58733, 0, 1)"
+avg_rank_monthly,4658,160890,13386,48442,1,y,,avg_rank_monthly_trfm,tavg_rank_monthly,"DDD$avg_rank_monthly_trfm = with(DDD, trfm(avg_rank_monthly, missing = 48442, min = 4658, max = 160890, zero_value = 13386, transformation = 1))","%trfm(avg_rank_monthly, 48442,4658, 160890, 13386, 1)"
+avg_rank_f15,238,78713,0,25510,,,,,,,
+avg_merc_listings_l15,no good,,,,,,,,,,
+avg_merc_listings_f15,no good,,,,,,,,,,
+avg_merc_listings_monthly,no good,,,,,,,,,,
+avg_fbalistings_listings_l15,no good,,,,,,,,,,
+avg_fbalistings_listings_f15,no good,,,,,,,,,,
+avg_fbalistings_monthly,no good,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
