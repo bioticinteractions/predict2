@@ -1,5 +1,5 @@
-library(predict2)
 library(data.table)
+library(predict2)
 
 final_data = fread('~/cloud/google_drive/trans/sales_forecasting/august3/20170929/sas_out/data_sept_final.csv', stringsAsFactors = F)
 table(final_data$category_o)
