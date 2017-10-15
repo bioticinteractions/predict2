@@ -1,2 +1,4 @@
 .Rproj.user
 scratch.r
+*.DS_Store
+
