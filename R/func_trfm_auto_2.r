@@ -43,10 +43,6 @@ trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_valu
   # data_df = fread('temp_wd/pet_trfm_sas_cust_trfm.csv')
   # trfm_df = fread('temp_wd/ranks_plots_variables_pet.csv')
 
-  # data_df = fread('~/cloud/google_drive/trans/sales_forecasting/prod_mod/test_1/finaldata_r.csv', stringsAsFactors = F)
-  # data_df = data_df[data_df$category_o == 'Grocery', ]
-  # trfm_df = fread('~/cloud/google_drive/trans/sales_forecasting/grocery/ranks_plots_variables_grocery.csv', stringsAsFactors = F)
-
   # variable_col = 'variable'
   # min_col = 'min'
   # max_col = 'max'
