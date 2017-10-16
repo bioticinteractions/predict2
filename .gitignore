@@ -1,5 +1,5 @@
 .Rproj.user
-.Rproj
+*.Rproj
 scratch.r
-.DS_Store
-
+*.DS_Store
+*.gitignore
