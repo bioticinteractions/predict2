@@ -15,7 +15,7 @@
 #' library(predict2)
 #' data(trfm_data)
 #' data(data_raw)
-#' trfm_example = trfm_auto(trfm_df = trfm_trans, data_df = data_raw)
+#' trfm_example = trfm_auto(trfm_df = trfm_data, data_df = data_raw)
 
 trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_value_col, missing_col, transformation_col, keep_col) {
 
