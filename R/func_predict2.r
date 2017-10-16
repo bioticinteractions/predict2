@@ -41,7 +41,6 @@
 #' )
 #' head(predicted)
 
-# predict2 <- function(model, newdata, actual, pred_type = 'response', write_model = FALSE, write_pred = FALSE, csv_name = 'model', dir = getwd()) {
 predict2 <- function(model, newdata, actual, pred_type, append_cols, write_model, write_pred, csv_name, dir, dir_data, dir_csv) {
 
   # assign current working directory for default directory location

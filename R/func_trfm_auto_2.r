@@ -11,10 +11,16 @@
 #' @param keep_col The name of the column that holds the 'y' or 'n' to keep a certain variable. Default is 'keep'
 #' @return trfm_auto() return a dataframe of the original data and the appended transformed data using trfm() and the parameters provided
 #' @export
+#' @example
+#' library(predict2)
+#' data(trfm_trans)
+#' data(data_raw)
+#' trfm_auto = trfm_func(trfm_df = trfm_trans, data_df = data_raw)
+
 trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_value_col, missing_col, transformation_col, keep_col) {
 
-  # optional arguments, default values set as to what dan typically uses
-  if (missing(variable_col)) {
+  # optional argumments, if missing, default values assigned
+	if (missing(variable_col)) {
     variable_col = 'variable'
   }
   if (missing(min_col)) {
@@ -67,20 +73,6 @@ trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_valu
   # subset transformation data, only keep those with keep == 'yes'
   # using 'subset' so that it can accommodate both datatable and dataframes
   trfm_df = subset(trfm_df, keep %in% c('y', 1), select = list_var_cols)
-
-  # trfm_df = subset(
-  #   trfm_df,
-  #   keep %in% c('y', 1),
-  #   select = c(
-  #     variable_col,
-  #     min_col,
-  #     max_col,
-  #     zero_value_col,
-  #     missing_col,
-  #     transformation_col,
-  #     keep_col
-  #   )
-  # ) # using subset so that it can accommodate both datatable and dataframes
 
   # assign data for each item in list_var_cols
   for (i in list_var_cols){

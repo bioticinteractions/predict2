@@ -1,6 +1,6 @@
 #' Toy data that makes no sense
 #'
-#' @description Data arbitrarily created from existing data (contact Dan for additional details)
+#' @description Data for making transformations arbitrarily created from existing data (contact Dan for additional details)
 #' @docType data
 #' @usage data(trfm_data)
 #' @keywords datasets

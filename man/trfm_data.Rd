@@ -9,7 +9,7 @@
 data(trfm_data)
 }
 \description{
-Data arbitrarily created from existing data (contact Dan for additional details)
+Data for making transformations arbitrarily created from existing data (contact Dan for additional details)
 }
 \examples{
 library(predict2)
