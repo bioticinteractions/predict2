@@ -98,7 +98,7 @@ trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_valu
     v_max = as.numeric(data_max[k])                           # assign maximum value
     v_zero = as.numeric(data_zero_value[k])                   # assign zero value
     v_transformation = as.numeric(data_transformation[k])     # assign transformation
-    v_data_df = subset(data_df, select = v_variable)          # subset specific column
+    v_data_df = subset(data_df, select = c(v_variable, 'category'))          # subset specific column
 
     trfm <- function(df_variable, missing, min, max, zero_value, transformation){
       # function to transform columns based on parameters
