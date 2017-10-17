@@ -80,7 +80,7 @@ predict2 <- function(model, newdata, actual, pred_type, append_cols, write_model
   ####################################
   # apply predict() on data
   pred_temp = lapply(model, function(x) predict(get(x), newdata = newdata, type = pred_type))
-
+  
   # combine all predictions into dataframe
   pred_temp = as.data.frame(do.call(cbind, pred_temp))
 
