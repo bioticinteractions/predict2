@@ -141,5 +141,3 @@ trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_valu
 
   return(temp_df)
 } # for function
-
-# trfm_auto = trfm_func(trfm_df = var_dt, data_df = grocery)
