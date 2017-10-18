@@ -45,17 +45,17 @@ trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_valu
   ##########################################################
   # debugging ##############################################
   ##########################################################
-  # library(data.table)
-  # data_df = fread('temp_wd/pet_trfm_sas_cust_trfm.csv')
-  # trfm_df = fread('temp_wd/ranks_plots_variables_pet.csv')
+  library(data.table)
+  data_df = fread('temp_wd/pet_trfm_sas_cust_trfm.csv')
+  trfm_df = fread('temp_wd/ranks_plots_variables_pet.csv')
 
-  # variable_col = 'variable'
-  # min_col = 'min'
-  # max_col = 'max'
-  # zero_value_col = 'zero_value'
-  # missing_col = 'missing'
-  # transformation_col = 'transformation'
-  # keep_col = 'keep'
+  variable_col = 'variable'
+  min_col = 'min'
+  max_col = 'max'
+  zero_value_col = 'zero_value'
+  missing_col = 'missing'
+  transformation_col = 'transformation'
+  keep_col = 'keep'
   ##########################################################
 
   # create vectors for columns needed in trfm()
@@ -98,7 +98,7 @@ trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_valu
     v_max = as.numeric(data_max[k])                           # assign maximum value
     v_zero = as.numeric(data_zero_value[k])                   # assign zero value
     v_transformation = as.numeric(data_transformation[k])     # assign transformation
-    v_data_df = subset(data_df, select = c(v_variable, 'category'))          # subset specific column
+    v_data_df = subset(data_df, select = c(v_variable))       # subset specific column
 
     trfm <- function(df_variable, missing, min, max, zero_value, transformation){
       # function to transform columns based on parameters
