@@ -1,15 +1,19 @@
 #' Takes predictions from model object(s) and and combines it with actual values
 #' This function takes a vector of strings that represent the model object names
-#' @param trfm_df The dataframe or datatable that contains the information for the transformations (i.e. values for the trfm() function)
+#' @param trfm_df The dataframe or datatable that contains the information for the transformations (i.e. values 
+#'   for the trfm() function)
 #' @param data_df The dataframe or datatable that contains the data that needs to be transformed
-#' @param variable_col The name of the column that holds the variable names for which the data need to be transformed. Default is 'variable'
+#' @param variable_col The name of the column that holds the variable names for which the data need to be transformed. 
+#'   Default is 'variable'
 #' @param min_col The name of the column that holds the minimum values for the trfm() function. Default is 'min'
 #' @param max_col The name of the column that holds the maximum values for the trfm() function. Default is 'max'
 #' @param zero_value_col The name of the column that holds the zero-value for the trfm() function. Default is 'zero_value'
 #' @param missing_col The name of the column that holds the missing value for the trfm() function. Default is 'missing'
-#' @param transformation_col The name of the column that holds the transformation indicator. Default is 'transformation'. Key: 0 = no transformation; 1 = log(); 2 = sqrt()
+#' @param transformation_col The name of the column that holds the transformation indicator. Default is 'transformation'. 
+#'   Key: 0 = no transformation; 1 = log(); 2 = sqrt()
 #' @param keep_col The name of the column that holds the 'y' or 'n' to keep a certain variable. Default is 'keep'
-#' @return trfm_auto() return a dataframe of the original data and the appended transformed data using trfm() and the parameters provided
+#' @return trfm_auto() return a dataframe of the original data and the appended transformed data using trfm() and 
+#'   the parameters provided
 #' @export
 #' @examples
 #' library(predict2)
@@ -17,7 +21,8 @@
 #' data(data_raw)
 #' trfm_example = trfm_auto(trfm_df = trfm_data, data_df = data_raw)
 
-trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_value_col, missing_col, transformation_col, keep_col) {
+trfm_auto = function( trfm_df, data_df, variable_col, min_col, max_col, 
+                      zero_value_col, missing_col, transformation_col, keep_col) {
   # optional argumments, if missing, default values assigned
 	if (missing(variable_col)) {
     variable_col = 'variable'
