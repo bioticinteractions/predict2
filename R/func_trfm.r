@@ -3,10 +3,13 @@
 #' trfm <- function(df_variable, missing, min, max, zero_value, transformation)
 #' @param df_variable A vector that contains the original values that need to be transformed
 #' @param missing The value that should replace any  missing values in the dataset
-#' @param min The minimum value that a given variable should take; any value below the minimum will be set equal to the min value
-#' @param max The maximum value that a given variable should take; any value above the maximum will be set equal to the max value
+#' @param min The minimum value that a given variable should take; any value below the minimum will 
+#'   be set equal to the min value
+#' @param max The maximum value that a given variable should take; any value above the maximum will 
+#'   be set equal to the max value
 #' @param zero_value This is the value that any value of 0 should be.
-#' @param transformation This is an integer value for corresponding to one of three transformation: 0 == no transformation, 1 == log(), 2 == sqrt()
+#' @param transformation This is an integer value for corresponding to one of three transformation: 
+#'   0 == no transformation, 1 == log(), 2 == sqrt()
 #' @return trfm() will a vector of transformed values
 #' @export
 # @examples
