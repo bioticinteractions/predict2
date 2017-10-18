@@ -9,11 +9,13 @@ trfm_auto(trfm_df, data_df, variable_col, min_col, max_col, zero_value_col,
   missing_col, transformation_col, keep_col)
 }
 \arguments{
-\item{trfm_df}{The dataframe or datatable that contains the information for the transformations (i.e. values for the trfm() function)}
+\item{trfm_df}{The dataframe or datatable that contains the information for the transformations (i.e. values 
+for the trfm() function)}
 
 \item{data_df}{The dataframe or datatable that contains the data that needs to be transformed}
 
-\item{variable_col}{The name of the column that holds the variable names for which the data need to be transformed. Default is 'variable'}
+\item{variable_col}{The name of the column that holds the variable names for which the data need to be transformed. 
+Default is 'variable'}
 
 \item{min_col}{The name of the column that holds the minimum values for the trfm() function. Default is 'min'}
 
@@ -23,12 +25,14 @@ trfm_auto(trfm_df, data_df, variable_col, min_col, max_col, zero_value_col,
 
 \item{missing_col}{The name of the column that holds the missing value for the trfm() function. Default is 'missing'}
 
-\item{transformation_col}{The name of the column that holds the transformation indicator. Default is 'transformation'. Key: 0 = no transformation; 1 = log(); 2 = sqrt()}
+\item{transformation_col}{The name of the column that holds the transformation indicator. Default is 'transformation'. 
+Key: 0 = no transformation; 1 = log(); 2 = sqrt()}
 
 \item{keep_col}{The name of the column that holds the 'y' or 'n' to keep a certain variable. Default is 'keep'}
 }
 \value{
-trfm_auto() return a dataframe of the original data and the appended transformed data using trfm() and the parameters provided
+trfm_auto() return a dataframe of the original data and the appended transformed data using trfm() and 
+  the parameters provided
 }
 \description{
 Takes predictions from model object(s) and and combines it with actual values

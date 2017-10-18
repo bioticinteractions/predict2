@@ -16,27 +16,32 @@ predict2(model, newdata, actual, pred_type, append_cols, write_model,
 \item{actual}{Vector of expected (or 'actual') data from the test dataset. Will be merged to
 the predicted data for easy export and subsequent comparison}
 
-\item{pred_type}{The type of predicted value predict will return: regression will return values; classification options:
-response prob, vote. Default is 'response' [see predict.randomForest for more information]}
+\item{pred_type}{The type of predicted value predict will return: regression will return values; 
+classification options: response prob, vote. Default is 'response' [see predict.randomForest 
+for more information]}
 
 \item{append_cols}{Append additional columns to the predictions .csv.}
 
-\item{write_model}{Logical. Whether to write the model fit objects to disk (as .data; one for each model). Default = FALSE}
+\item{write_model}{Logical. Whether to write the model fit objects to disk (as .data; one for 
+each model). Default = FALSE}
 
 \item{write_pred}{Logical. Whether to write the predictions to disk (as a .csv). Default = FALSE}
 
 \item{csv_name}{String add to the fileneames of the data and prediction files (Default value
 = 'model'; model.data; model.csv)}
 
-\item{dir}{Path location where the .csv and .data files will be written. Default is current working directory: getwd()}
+\item{dir}{Path location where the .csv and .data files will be written. Default is current 
+working directory: getwd()}
 
-\item{dir_data}{Specify location for data files if you want the data files to be in a separate file. Default is current working directory: getwd()}
+\item{dir_data}{Specify location for data files if you want the data files to be in a separate 
+file. Default is current working directory: getwd()}
 
-\item{dir_csv}{Specify location for csv files if you want the data files to be in a separate file. Default is current working directory: getwd()
-working directory (i.e. getwd())}
+\item{dir_csv}{Specify location for csv files if you want the data files to be in a separate file. 
+Default is current working directory: getwd() working directory (i.e. getwd())}
 }
 \value{
-predict2() will return the results from predict() as a data.frame. each model object in 'model' will be one column in the dataframe.
+predict2() will return the results from predict() as a data.frame. each model object in 
+  model' will be one column in the dataframe.
 }
 \description{
 Takes predictions from model object(s) and and combines it with actual values

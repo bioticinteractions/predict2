@@ -13,13 +13,16 @@ trfm(df_variable, missing, min, max, zero_value, transformation)
 
 \item{missing}{The value that should replace any  missing values in the dataset}
 
-\item{min}{The minimum value that a given variable should take; any value below the minimum will be set equal to the min value}
+\item{min}{The minimum value that a given variable should take; any value below the minimum will 
+be set equal to the min value}
 
-\item{max}{The maximum value that a given variable should take; any value above the maximum will be set equal to the max value}
+\item{max}{The maximum value that a given variable should take; any value above the maximum will 
+be set equal to the max value}
 
 \item{zero_value}{This is the value that any value of 0 should be.}
 
-\item{transformation}{This is an integer value for corresponding to one of three transformation: 0 == no transformation, 1 == log(), 2 == sqrt()}
+\item{transformation}{This is an integer value for corresponding to one of three transformation: 
+0 == no transformation, 1 == log(), 2 == sqrt()}
 }
 \value{
 trfm() will a vector of transformed values

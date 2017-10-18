@@ -8,10 +8,12 @@ This function takes a vector of strings that represent the model object names}
 twec_fiscal_month(month)
 }
 \arguments{
-\item{month}{A vector or data column containig date (either as a Date class or character). Must be in the format of YYYY-MM-DD (either as.Date format or character)}
+\item{month}{A vector or data column containig date (either as a Date class or character). 
+Must be in the format of YYYY-MM-DD (either as.Date format or character)}
 }
 \value{
-twec_fiscal_month() will return a vector of integers representing the fiscal year month designations for TWEC
+twec_fiscal_month() will return a vector of integers representing the fiscal year 
+  month designations for TWEC
 }
 \description{
 Takes predictions from model object(s) and and combines it with actual values
