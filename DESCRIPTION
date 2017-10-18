@@ -6,6 +6,7 @@ Authors@R: person("Daniel", "Song", email = "danssong@gmail.com", role = c("aut"
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 2.10)
+Depends: 
+	R (>= 2.10)
 ByteCompile: true
 RoxygenNote: 6.0.1

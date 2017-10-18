@@ -43,15 +43,12 @@
 
 predict2 <- function(model, newdata, actual, pred_type, append_cols, write_model, write_pred, csv_name, dir, dir_data, dir_csv) {
 
-  # assign current working directory for default directory location
-  current_wd = paste0(getwd(), '/')
-
   ###################################################
   # if statements to set parameters that are options
   ###################################################
-  if (!is.vector(model)) {
-    stop('list of models must be in the form of a vector')
-  }
+  # if (!is.vector(model)) {
+  #   stop('list of models must be in the form of a vector')
+  # }
   if (missing(pred_type)) {
     pred_type = 'response'
   }
@@ -66,6 +63,7 @@ predict2 <- function(model, newdata, actual, pred_type, append_cols, write_model
     csv_name = paste0('model_', timestamp_temp)
   }
   if (missing(dir)) {
+    current_wd = paste0(getwd(), '/')
     dir = current_wd
   }
   if (missing(dir_data)) {
@@ -78,15 +76,20 @@ predict2 <- function(model, newdata, actual, pred_type, append_cols, write_model
   ####################################
   # create predictions and dataframes
   ####################################
-  # apply predict() on data
-  pred_temp = lapply(model, function(x) predict(get(x), newdata = newdata, type = pred_type))
+  if (is.vector(model)) {
+    # apply predict() on data
+    pred_temp = lapply(model, function(x) predict(get(x), newdata = newdata, type = pred_type))
+    
+    # combine all predictions into dataframe
+    pred_temp = as.data.frame(do.call(cbind, pred_temp))
   
-  # combine all predictions into dataframe
-  pred_temp = as.data.frame(do.call(cbind, pred_temp))
-
-  # change names of each model's prediction
-  names(pred_temp) = paste0(model, '_predict')
-
+    # change names of each model's prediction
+    names(pred_temp) = paste0(model, '_predict')
+  } else {
+    pred_temp = as.data.frame(predict(model, newdata = newdata, type = pred_type))
+    names(pred_temp) = 'model_predict'
+  }
+  
   ###########################################################
   # append data: actual data and any other columns to append
   ###########################################################

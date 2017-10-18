@@ -11,14 +11,13 @@
 #' @param keep_col The name of the column that holds the 'y' or 'n' to keep a certain variable. Default is 'keep'
 #' @return trfm_auto() return a dataframe of the original data and the appended transformed data using trfm() and the parameters provided
 #' @export
-#' @example
+#' @examples
 #' library(predict2)
 #' data(trfm_data)
 #' data(data_raw)
 #' trfm_example = trfm_auto(trfm_df = trfm_data, data_df = data_raw)
 
 trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_value_col, missing_col, transformation_col, keep_col) {
-
   # optional argumments, if missing, default values assigned
 	if (missing(variable_col)) {
     variable_col = 'variable'
@@ -41,21 +40,21 @@ trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_valu
   if (missing(keep_col)) {
     keep_col = 'keep'
   }
-
+  
   ##########################################################
   # debugging ##############################################
   ##########################################################
-  library(data.table)
-  data_df = fread('temp_wd/pet_trfm_sas_cust_trfm.csv')
-  trfm_df = fread('temp_wd/ranks_plots_variables_pet.csv')
-
-  variable_col = 'variable'
-  min_col = 'min'
-  max_col = 'max'
-  zero_value_col = 'zero_value'
-  missing_col = 'missing'
-  transformation_col = 'transformation'
-  keep_col = 'keep'
+  # library(data.table)
+  # data_df = fread('temp_wd/pet_trfm_sas_cust_trfm.csv')
+  # trfm_df = fread('temp_wd/ranks_plots_variables_pet.csv')
+  # 
+  # variable_col = 'variable'
+  # min_col = 'min'
+  # max_col = 'max'
+  # zero_value_col = 'zero_value'
+  # missing_col = 'missing'
+  # transformation_col = 'transformation'
+  # keep_col = 'keep'
   ##########################################################
 
   # create vectors for columns needed in trfm()
@@ -72,18 +71,27 @@ trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_valu
 
   # subset transformation data, only keep those with keep == 'yes'
   # using 'subset' so that it can accommodate both datatable and dataframes
-  trfm_df = subset(trfm_df, keep %in% c('y', 1), select = list_var_cols)
+  trfm_df = subset(trfm_df, eval(parse(text = keep_col)) %in% c('y', 1), select = list_var_cols)
 
   # assign data for each item in list_var_cols
-  for (i in list_var_cols){
-    pasted_name = paste0('data_', i)
-    assign(paste0(pasted_name), trfm_df[[i]])
-    # print(pasted_name) # for debugging
-  } # for i loop
-
+  # for (i in list_var_cols){
+  #   pasted_name = paste0('data_', i)
+  #   assign(paste0(pasted_name), trfm_df[[i]])
+  #   # print(pasted_name) # for debugging
+  # } # for i loop
+  
+  # get rid of global variable notes in devtools::check()
+  data_variable <- trfm_df[[variable_col]]
+  data_variable_trfm <- paste0(data_variable)
+  data_missing <- trfm_df[[missing_col]]
+  data_min <- trfm_df[[min_col]]
+  data_max <- trfm_df[[max_col]]
+  data_zero_value <- trfm_df[[zero_value_col]]
+  data_transformation <- trfm_df[[transformation_col]]
+  
   # 'data_variable' is a reference to the variable column
   # originally wanted to have fixed custom column names (.*_trfm)
-  data_variable_trfm = paste0(data_variable)
+  # data_variable_trfm = paste0(data_variable)
 
   list_vec = vector('list', length = length(data_variable))
 
@@ -100,26 +108,26 @@ trfm_auto = function(trfm_df, data_df, variable_col, min_col, max_col, zero_valu
     v_transformation = as.numeric(data_transformation[k])     # assign transformation
     v_data_df = subset(data_df, select = c(v_variable))       # subset specific column
 
-    trfm <- function(df_variable, missing, min, max, zero_value, transformation){
-      # function to transform columns based on parameters
-      # missing value is applied to the vector after missing transformation is applied
-
-      vec_new <- sapply(df_variable, function(x) ifelse(is.na(x) == T, missing, x))
-      vec_new <- sapply(vec_new, function(x) ifelse(x == 0, zero_value, x))
-      vec_new <- sapply(vec_new, function(x) min(max(min, x), max))
-
-      if (transformation == 1) {
-        vec_new_trans <- sapply(vec_new, function(x) ifelse(x <= 0, log(0.0001), log(x)))
-      } else if (transformation == 2) {
-        vec_new_trans <- sapply(vec_new, function(x) sqrt(x))
-      } else {
-        vec_new_trans <- vec_new
-      }
-      return(vec_new_trans)
-    }
+    # trfm <- function(df_variable, missing, min, max, zero_value, transformation){
+    #   # function to transform columns based on parameters
+    #   # missing value is applied to the vector after missing transformation is applied
+    # 
+    #   vec_new <- sapply(df_variable, function(x) ifelse(is.na(x) == T, missing, x))
+    #   vec_new <- sapply(vec_new, function(x) ifelse(x == 0, zero_value, x))
+    #   vec_new <- sapply(vec_new, function(x) min(max(min, x), max))
+    # 
+    #   if (transformation == 1) {
+    #     vec_new_trans <- sapply(vec_new, function(x) ifelse(x <= 0, log(0.0001), log(x)))
+    #   } else if (transformation == 2) {
+    #     vec_new_trans <- sapply(vec_new, function(x) sqrt(x))
+    #   } else {
+    #     vec_new_trans <- vec_new
+    #   }
+    #   return(vec_new_trans)
+    # }
 
     # call transformation function
-    temp_trfm_df = trfm(
+    temp_trfm_df = predict2::trfm(
         df_variable = v_data_df,
         missing = v_missing,
         min = v_min,

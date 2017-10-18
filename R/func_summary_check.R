@@ -3,7 +3,9 @@
 #' @param generic_df The dataframe or datatable from which to get summarized information
 #' @return summary_check() This function will return the following moments for numeric columns of the data specified:
 #'   mean, media, NA count, total rows, ratio of NA to total rows
+#' @importFrom stats median
 #' @export
+
 summary_check = function(generic_df){
   col_numeric = lapply(generic_df, is.numeric)
   col_n_d = do.call(rbind, col_numeric)
@@ -17,7 +19,7 @@ summary_check = function(generic_df){
   summary_df = subset(generic_df, select = col_n_d)
 
   sum_mean = sapply(summary_df, FUN = function(x) mean(x, na.rm = T))
-  sum_median = sapply(summary_df, FUN = function(x) median(x, na.rm = T))
+  sum_median = sapply(summary_df, FUN = function(x) stats::median(x, na.rm = T))
   sum_na = sapply(summary_df, FUN = function(x) sum(is.na(x)))
   sum_row = sapply(summary_df, FUN = function(x) length(x))
 

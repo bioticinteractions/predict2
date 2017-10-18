@@ -35,18 +35,19 @@
 # %mend trfm;
 
 trfm <- function(df_variable, missing, min, max, zero_value, transformation){
-vec_new <- sapply(df_variable, function(x) ifelse(is.na(x) == T, missing, x))
-vec_new <- sapply(vec_new, function(x) ifelse(x == 0, zero_value, x)) # missing value is applied to the vector after missing transformation is applied
-
-vec_new <- sapply(vec_new, function(x) min(max(min, x), max))
-# do the data transformation via function
-if (transformation == 1) {
-  vec_new_trans <- sapply(vec_new, function(x) ifelse(x <= 0, log(0.0001), log(x)))
-} else if (transformation == 2) {
-  vec_new_trans <- sapply(vec_new, function(x) sqrt(x))
-} else {
-  vec_new_trans <- vec_new
-}
-vec_new_trans = round(vec_new_trans, 8)
-return(vec_new_trans)
+  # function to transform columns based on parameters
+  # missing value is applied to the vector after missing transformation is applied
+  
+  vec_new <- sapply(df_variable, function(x) ifelse(is.na(x) == T, missing, x))
+  vec_new <- sapply(vec_new, function(x) ifelse(x == 0, zero_value, x))
+  vec_new <- sapply(vec_new, function(x) min(max(min, x), max))
+  
+  if (transformation == 1) {
+    vec_new_trans <- sapply(vec_new, function(x) ifelse(x <= 0, log(0.0001), log(x)))
+  } else if (transformation == 2) {
+    vec_new_trans <- sapply(vec_new, function(x) sqrt(x))
+  } else {
+    vec_new_trans <- vec_new
+  }
+  return(vec_new_trans)
 }

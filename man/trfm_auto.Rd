@@ -34,3 +34,9 @@ trfm_auto() return a dataframe of the original data and the appended transformed
 Takes predictions from model object(s) and and combines it with actual values
 This function takes a vector of strings that represent the model object names
 }
+\examples{
+library(predict2)
+data(trfm_data)
+data(data_raw)
+trfm_example = trfm_auto(trfm_df = trfm_data, data_df = data_raw)
+}
