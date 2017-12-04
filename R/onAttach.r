@@ -1,7 +1,7 @@
 .onAttach <- function(libname, pkgname) {
   # Runs when attached to search() path such as by library() or require()
   if (interactive()) {
-    v = packageVersion("predict2")
+    v = utils::packageVersion("predict2")
     packageStartupMessage('  This is a function created by Daniel Song to improve workflow')
     packageStartupMessage('  within R when using multiple models to make predictions.')
     packageStartupMessage('  This was tested with regresssion models but should work with classification models.')
