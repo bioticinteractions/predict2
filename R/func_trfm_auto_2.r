@@ -51,6 +51,7 @@ trfm_auto = function( trfm_df, data_df, variable_col, min_col, max_col,
   ##########################################################
   # library(data.table)
   # data_df = fread('temp_wd/pet_trfm_sas_cust_trfm.csv')
+  # data_df = data_df[1, drop = F]
   # trfm_df = fread('temp_wd/ranks_plots_variables_pet.csv')
   # 
   # variable_col = 'variable'
@@ -150,7 +151,10 @@ trfm_auto = function( trfm_df, data_df, variable_col, min_col, max_col,
   } # for k loop
 
   # get dataframe object from vector containing object names, then combine into dataframe
-  temp_df = as.data.frame(sapply(data_variable_trfm, function(x) get(paste0(x))))
-
+  #temp_df = as.data.frame(sapply(data_variable_trfm, function(x) get(paste0(x))))
+  temp_df = sapply(data_variable_trfm, function(x) get(paste0(x)))
+  temp_df = rbind.data.frame(temp_df)
+  names(temp_df) = data_variable_trfm
+  
   return(temp_df)
 } # for function
